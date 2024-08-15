@@ -222,13 +222,12 @@ Si quieres saber más sobre mí, puedes ir a mi perfil de GitHub:
 
 <div>
   <h3>¡Hola, mi nombre es <b><i>Gabriel</i></b> 👋🏽!! <br></h3>
-  <p>Soy de ... y tengo formación en
-  <br>Otra información...</p>
+  <p>Platense viviendo en la ciudad de Buenos Aires (Argentina). Si bien me recibí de Geofísico, desde hace un tiempo trabajo como Data Scientist. Acualmente estoy involucrado en proyectos de series temporales y detección de anomalías. </p>  
 </div>
 
 Si quieres saber más sobre mí, puedes ir a mi perfil de GitHub:
 
-[![GitHub Profile](https://img.shields.io/badge/GitHub:-Nahuel_Lopez_Dev_ထ-05122A?flat&logo=github&logoColor=white&labelColor=343941)](https://github.com/nahuel-lopez-dev)
+[![GitHub Profile](https://img.shields.io/badge/GitHub:-Geofgabriel_ထ-05122A?flat&logo=github&logoColor=white&labelColor=343941)](https://github.com/Geofgabriel)
   
 💬 Siéntete libre de ponerte en contacto conmigo:
 
