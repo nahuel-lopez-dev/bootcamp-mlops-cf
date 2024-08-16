@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat con OpenAI</title>
+</head>
+<body>
+    <form id="chat-form" method="post" action="/chat">
+        <h1>Chatbot</h1>
+        <input type="text" id="user-message" name="user_message" placeholder="Escribe tu mensaje aquí" required>
+        <button type="submit">Enviar</button>
+    </form>
+    <div id="chat-log">
+        {% if user_message %}
+            <p>User: {{ user_message }}</p>
+        {% endif %}
+        {% if ai_message %}
+            <p>AI: {{ ai_message }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
