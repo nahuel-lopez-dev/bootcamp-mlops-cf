@@ -92,8 +92,10 @@ Tecnologías utilizadas para construir el proyecto:
 - [Astronomer](https://docs.astronomer.io/) - Aplicación de software como servicio (SaaS) que posee y ejecuta recursos de Astro. En este caso se utiliza Astro CLI para desplegar y correr la UI de Airflow.
 
 ## **Instalación y configuración del Entorno** 
-### Esto no se si lo pondría
+
+          
 Instalaciones y configuraciones del entorno
+
 
 `Python`
 
@@ -147,11 +149,10 @@ A su vez, se configura la automatización, para repetir el proceso de ETL alguna
 
 ## **Desarrollo**
 
-Para desarrollar este proyecto se utiliza...
+Desde el punto de vista de Machine Learning el problema a resolver es un problema de clasificación binario para esta versión inicial. 
+### Etapas
 
-### Procesos
-
-#### 1. Proceso1
+#### 1. Data
    
    - dfafaf
    - fdasf
@@ -161,7 +162,7 @@ Para desarrollar este proyecto se utiliza...
    - dfafd
    - 
    
-#### 2. Proceso2
+#### 2. Modelo
     
    - dfafaf
    - dfadf
@@ -169,13 +170,24 @@ Para desarrollar este proyecto se utiliza...
    - dfdfaf
    - dfadf
  
-#### 3. Proceso3
+#### 3. Inferencia
 
    - dfafaf
    - dfadf
    - dfadfa
    - dfdfaf
    - dfadf
+
+#### 4. Entrenamiento
+
+#### 5. CI/CD
+
+#### 6. Infra de Servicio
+#### 7. Workflow y datos
+#### 8. Interacción de usuarios
+#### 9. Limitaciones
+
+
 
 ## **Screenshots**
 
