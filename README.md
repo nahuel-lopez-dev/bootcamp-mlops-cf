@@ -38,22 +38,22 @@
 
 ## **Información del proyecto**
 
-Proyecto final para el bootcamp de MLOps de [Código Facilito](https://codigofacilito.com), donde se va a construir un ...
+Proyecto final para el bootcamp de MLOps de [Código Facilito](https://codigofacilito.com).
 
 - Objetivo General:
   
-  Construir un sistema de ETL donde se ingesta en una tabla de Snowflake la información de las ligas de fútbol más importantes de Europa
+  Construir una aplicación a partir de la cual se sube una imagen de una camiseta de futbol y se tiene como resultado  el nombre del equipo de fútbol. 
 
-- Requisitos Específicos:
-  - Extraer datos de múltiples fuentes (páginas web) con python.
-  - Transformar estos datos con Python para obtener un dataset limpio.
-  - Crear un DAG en Airflow, desplegado de manera local con Astro CLI, para que dos veces por semana vaya a la página web, extraiga la información, la transforme, y luego se cargue en una tabla en Snowflake.
-  - Una vez hecho esto, se podrá hacer todo tipo de trabajos de analítica de datos, ya sea top five de los equipos con más goles, con menos goles, con mayor partidos ganados, etc.
+- Objetivos Específicos:
+  - Extraer imagenes de múltiples fuentes de camisetas de fútbol de al menos dos equipos y almacenarlas de forma adecuada.
+  - Entrenamiento de una red neuronal básica para realizar la clasificación.
+  - Trackeo de la información necesaria del entrenamiento del modelo y correcto registro del mismo.
+  - Despliegue del modelo de manera online.
+  - Monitoreo del mismo y definicioes para re entrenamiento del modelo.
 
 - Alcance:
   
-  Para el público en general, no se busca resolver una problemática en particular, sino practicar algunas de las herramientas vistas en el bootcamp para mostrar el desarrollo y despliegue a producción de un modelo de ML.
-
+  Proyecto end to end de MLOps para para un problema básico de computer vision como la clasificación de imagenes.
 
 ## **Version 1.0.0**
 
@@ -92,7 +92,7 @@ Tecnologías utilizadas para construir el proyecto:
 - [Astronomer](https://docs.astronomer.io/) - Aplicación de software como servicio (SaaS) que posee y ejecuta recursos de Astro. En este caso se utiliza Astro CLI para desplegar y correr la UI de Airflow.
 
 ## **Instalación y configuración del Entorno** 
-
+### Esto no se si lo pondría
 Instalaciones y configuraciones del entorno
 
 `Python`
