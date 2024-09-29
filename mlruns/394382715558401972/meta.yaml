@@ -1,0 +1,6 @@
+artifact_location: file:///home/gaby/Documents/CF_MLOps/Trabajo/cnn-classifier-jersey/fut_class/mlruns/394382715558401972
+creation_time: 1727567114930
+experiment_id: '394382715558401972'
+last_update_time: 1727567114930
+lifecycle_stage: active
+name: Clasificador binario de camisetas de futbol

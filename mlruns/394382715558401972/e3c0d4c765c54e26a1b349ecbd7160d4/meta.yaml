@@ -1,0 +1,15 @@
+artifact_uri: file:///home/gaby/Documents/CF_MLOps/Trabajo/cnn-classifier-jersey/fut_class/mlruns/394382715558401972/e3c0d4c765c54e26a1b349ecbd7160d4/artifacts
+end_time: 1727576024203
+entry_point_name: ''
+experiment_id: '394382715558401972'
+lifecycle_stage: active
+run_id: e3c0d4c765c54e26a1b349ecbd7160d4
+run_name: enchanting-snail-219
+run_uuid: e3c0d4c765c54e26a1b349ecbd7160d4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1727575807591
+status: 3
+tags: []
+user_id: gaby

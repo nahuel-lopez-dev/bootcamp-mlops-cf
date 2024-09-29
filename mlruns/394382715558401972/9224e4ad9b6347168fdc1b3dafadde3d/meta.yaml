@@ -1,0 +1,15 @@
+artifact_uri: file:///home/gaby/Documents/CF_MLOps/Trabajo/cnn-classifier-jersey/fut_class/mlruns/394382715558401972/9224e4ad9b6347168fdc1b3dafadde3d/artifacts
+end_time: 1727568884866
+entry_point_name: ''
+experiment_id: '394382715558401972'
+lifecycle_stage: active
+run_id: 9224e4ad9b6347168fdc1b3dafadde3d
+run_name: nervous-turtle-499
+run_uuid: 9224e4ad9b6347168fdc1b3dafadde3d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1727567115620
+status: 3
+tags: []
+user_id: gaby
