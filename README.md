@@ -85,7 +85,8 @@ Tecnologías utilizadas para construir el proyecto:
 - [Docker](https://www.docker.com/) - La tecnología de contenedores utilizada para manejar una imagen de airflow.
 - [Python](https://www.python.org/) - El lenguaje de programación utilizado.
 - [Flask](https://pandas.pydata.org/) - Una librería  de Python para la manipulación y el análisis de los datos.
-- [TensorFlow-Keras](https://www.postgresql.org) - El lenguaje de consulta utilizado para bases de datos relacionales.
+- [TensorFlow-Keras](https://www.postgresql.org) - Framework de Python para Deep Learning.
+- [MLFlow](https://mlflow.org/) - Una plataforma de MLOps Open-Source.
 
 ## **Instalación y configuración del Entorno** 
 
@@ -101,16 +102,6 @@ Instalar Python: [Instalación](https://www.python.org/downloads/)
 # Instalar según tu sistema operativo
 ```
 
-`WSL`
-
-Instalar WSL: [Instalación](https://learn.microsoft.com/es-es/windows/wsl/install)
-
-```bash
-# Por terminal
-wsl --update
-wsl.exe --install
-```
-
 `Docker`
 
 Instalar Docker: [Instalación](https://www.docker.com/)
@@ -120,27 +111,13 @@ Seguir los pasos de instalación según tu sistema operativo.
 Requiere de WSL para Windows
 ```
 
-`Astro CLI`
+
+`MLFlow`
+
+Instalar MLFLow
 
 ```bash
-# Instalar Astro CLI por medio de WSL
-curl -sSL install.astronomer.io | sudo bash -s
-
-# En el Visual Studio Code o el editor de tu preferencia, inicializar Astro y todos los paquetes necesarios
-astro dev init
-
-# Levantar la UI de Airflow
-astro dev start o bien sudo astro dev start en caso de acceso denegado  
-```
-
-
-`Airflow`
-
-Corre con una imagen de Docker que se levanta y ejecuta con Astro CLI
-
-```bash
-Se debe realizar la configuración de conexión con Snowflake y se generan las variables de entorno para proteger los datos sensibles de la misma.
-A su vez, se configura la automatización, para repetir el proceso de ETL algunas veces en la semana.
+pip install mlflow
 ```
 
 ## **Desarrollo**
@@ -178,21 +155,39 @@ El entrenamiento requiere un número de pasos para poder llevar
 Para esta aplicación el tipo de inferencia es de tipo Online. Esto es a demanda de un usuario, el cual sube una imagen a la aplicación y esta devuelve como resultado el nombre del animal y probabilidad con la que asegura la predicción. El servicio de inferencia se ofrece a través del framework web Flask por su simplicidad y capacidad de integración con otras herramientas. A través de MLFlow se comparan los modelos registrados y se utiliza como modelo productivo el que posee el alias de *Champion*. 
 
 
-#### 5. CI/CD
-La integración continua, despliegue y re entrenamiento del modelo se realiza con Github Actions. El disparador o *trigger* es al realizar un push al repo. Esto puede darse al actualizar las imagenes para mejorar y/o customizar el dataset y por ende las salidas del modelo. También al actualizar el modelo ya sea por una modificación del mismo o querer usar otro modelo. En esta situación la definición de modelo *champion* estará dada por la comparación de una métrica.
-
+#### 5. *CI/CD*
+La integración continua, despliegue y re entrenamiento del modelo se realiza con Github Actions. El disparador o *trigger* es al realizar un push al repo. Esto puede darse al actualizar las imagenes para mejorar y/o customizar el dataset y por ende las salidas del modelo. También al actualizar el modelo ya sea por una modificación del mismo o querer usar otro modelo. En esta situación la definición de modelo *champion* está dada por la comparación de una métrica.
 
 
 #### 6. Infra de Servicio
+
+
+
+
 #### 7. Workflow y datos
+
+
+
+
 #### 8. Interacción de usuarios
+
+
 #### 9. Limitaciones
+
+- Modelo: El modelo utilizado es una arquitectura muy simple que, si bien permite realizar la tarea para este bootcamp, podría buscarse su mejora y/o utilización de otro tipo de modelos. 
+
+- El ejemplo es con una clasificación binaria. No obstante es muy fácil extender el problema a mas de una clase (clasificación de otros animales).
+
+- El número de datos viene limitado por los recursos de la computadora en la
+que se entrena el modelo. Lo idea seria no tener limitantes de imagenes en orden para no caer en sobre ajuste y que el modelo aprenda generalizar mejor lo aprendido.
+
+- Si bien para este ejemplo se utiliza una métrica para ver si el modelo se acepta o se descarta se podrían implementar pruebas mas robustas para promover un modelo de *challenger* a *champion*.
 
 
 
 ## **Screenshots**
 
-En proceso...
+En proceso...a falta de demo podríamos subir alguna de mlflow,no?
 
 
 ## **Información adicional**
