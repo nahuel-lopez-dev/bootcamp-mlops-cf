@@ -42,14 +42,15 @@ Proyecto final para el bootcamp de MLOps de [Código Facilito](https://codigofac
 
 - Objetivo General:
   
-  Construir una aplicación a partir de la cual se sube una imagen de una camiseta de futbol y se tiene como resultado  el nombre del equipo de fútbol. 
+  Construir una aplicación a partir de la cual se sube una imagen de un perro o gato y se tiene como resultado  el nombre del animal que aparece en la imagen. 
 
 - Objetivos Específicos:
-  - Extraer imagenes de múltiples fuentes de camisetas de fútbol de al menos dos equipos y almacenarlas de forma adecuada.
+  - Extraer y cargar imagenes de gatos y perros, y almacenarlas de forma adecuada.
   - Entrenamiento de una red neuronal básica para realizar la clasificación.
   - Trackeo de la información necesaria del entrenamiento del modelo y correcto registro del mismo.
   - Despliegue del modelo de manera online.
-  - Monitoreo del mismo y definicioes para re entrenamiento del modelo.
+  - Monitoreo del mismo y definicioes para el re entrenamiento del modelo.
+  - Limitaciones y próximos pasos.
 
 - Alcance:
   
@@ -68,14 +69,12 @@ Proyecto final para el bootcamp de MLOps de [Código Facilito](https://codigofac
 
 Lista de software y herramientas, que necesitas para instalar y ejecutar este proyecto:
 
-- WSL
 - Git
 - GitHub
 - Docker
 - Python
-- Snowflake
-- Airflow
-- Astro CLI
+- Flask
+- Tensorflow
 
 ## **Herramientas y tecnologías**
 
@@ -85,11 +84,8 @@ Tecnologías utilizadas para construir el proyecto:
 - [GitHub](https://github.com/) - La plataforma de desarrollo colaborativo, donde se aloja este proyecto.
 - [Docker](https://www.docker.com/) - La tecnología de contenedores utilizada para manejar una imagen de airflow.
 - [Python](https://www.python.org/) - El lenguaje de programación utilizado.
-- [Pandas](https://pandas.pydata.org/) - Una librería  de Python para la manipulación y el análisis de los datos.
-- [SQL](https://www.postgresql.org) - El lenguaje de consulta utilizado para bases de datos relacionales.
-- [Snowflake](https://www.snowflake.com/es/) - La plataforma de almacenamiento de datos basada en la nube que fue utilizada. 
-- [Airflow](https://airflow.apache.org/) - La plataforma de gestión de flujo (un orquestador) utilizada.
-- [Astronomer](https://docs.astronomer.io/) - Aplicación de software como servicio (SaaS) que posee y ejecuta recursos de Astro. En este caso se utiliza Astro CLI para desplegar y correr la UI de Airflow.
+- [Flask](https://pandas.pydata.org/) - Una librería  de Python para la manipulación y el análisis de los datos.
+- [TensorFlow-Keras](https://www.postgresql.org) - El lenguaje de consulta utilizado para bases de datos relacionales.
 
 ## **Instalación y configuración del Entorno** 
 
@@ -154,33 +150,29 @@ Desde el punto de vista de Machine Learning el problema a resolver es un problem
 
 #### 1. Data
    
-   - dfafaf
-   - fdasf
-   - dfafa
-   - dfafadf
-   - dfafafd
-   - dfafd
-   - 
+- Datasets: En páginas como Kaggle se pueden obtener datasets ya armados con imagenes como las que se utiliza para entrenar el modelo de Deep Learning. Particularmente para este proyecto se utilizó el dataset www.kaggle
+.com/c/dogs-vs-cats/data . No obstante se podrían usar otros dataset y combinarlos para incrementar el número de datos.
+
+- Imagenes personales: Luego si uno quisiera podría subir imagenes de sus mascotas personales, respetando el criterio en el que se separan las imagenes para los entrenamientos.
+
+- Inferencia: El usuario debería de poder subir su imagen en formato JPG a la aplicación para ver que animal aparece. 
    
 #### 2. Modelo
     
-   - dfafaf
-   - dfadf
-   - dfadfa
-   - dfdfaf
-   - dfadf
+ Para entrenar el modelo de clasificación se utilizó una red neuronal convolucional básica con 5 capas convolucionales. Se utilizó la libreria de tensorflow con Keras ya que tiene una buena documentación y es relativamente simple para implementar modelos de machine learning apilando capas. 
  
 #### 3. Inferencia
 
-   - dfafaf
-   - dfadf
-   - dfadfa
-   - dfdfaf
-   - dfadf
+Para esta aplicación el tipo de inferencia es de tipo Online. A demanda de un usuario, el cual sube una imagen a la aplicación y esta devuelve como resultado el nombre del animal y probabilidad con la que asegura la predicción. El servicio se inferencia se ofrece a través del framework web Flask por su simplicidad y capacidad de integración con otras herramientas.
 
 #### 4. Entrenamiento
 
+El entrenamiento requiere un número de pasos para poder entrenar el modelo. El primero es llevar las imagenes, que se asume que tienen su etiquta coomo nombre, en tres carpetas distintas de train, test y validacion. Dentro de cada una de ellas se tiene una carpeta por clase (una para perros y otra para gatos).
+
+
 #### 5. CI/CD
+La integración continua
+
 
 #### 6. Infra de Servicio
 #### 7. Workflow y datos
