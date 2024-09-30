@@ -157,21 +157,30 @@ Desde el punto de vista de Machine Learning el problema a resolver es un problem
 
 - Inferencia: El usuario debería de poder subir su imagen en formato JPG a la aplicación para ver que animal aparece. 
    
-#### 2. Modelo
+
+#### 2. Preprocesamiento
+
+El entrenamiento requiere un número de pasos para poder llevar
+ a cabo el modelo. El primero es llevar las imagenes, que se
+ asume que tienen su etiquta coomo nombre, en tres carpetas distintas de train, test y validacion. Dentro de cada una de ellas se tiene una carpeta por clase (una para perros y otra para gatos). Además se debe de realizar un *resizing* de las imagenes y un escalamiento de los datos para poder alimentar el modelo deep learing. Este ultimo paso está como una capa mas dentro de la arquitectura de la red. 
+
+
+
+#### 3. Modelo
     
  Para entrenar el modelo de clasificación se utilizó una red neuronal convolucional básica con 5 capas convolucionales. Se utilizó la libreria de tensorflow con Keras ya que tiene una buena documentación y es relativamente simple para implementar modelos de machine learning apilando capas. 
- 
+ Para tener control y poder de decisión sobre los modelos, experimentos y registro de modelos se utilizó la librería MLFlow. Dicha librería nos permite hacer un trackeo de cada una de las pruebas de entrenamiento mediante una UI y registrar modelos. Luego con la misma librería a través de su API se puede invocar los modelos para realizar las inferencias.
+
+
+
 #### 3. Inferencia
 
-Para esta aplicación el tipo de inferencia es de tipo Online. A demanda de un usuario, el cual sube una imagen a la aplicación y esta devuelve como resultado el nombre del animal y probabilidad con la que asegura la predicción. El servicio se inferencia se ofrece a través del framework web Flask por su simplicidad y capacidad de integración con otras herramientas.
-
-#### 4. Entrenamiento
-
-El entrenamiento requiere un número de pasos para poder entrenar el modelo. El primero es llevar las imagenes, que se asume que tienen su etiquta coomo nombre, en tres carpetas distintas de train, test y validacion. Dentro de cada una de ellas se tiene una carpeta por clase (una para perros y otra para gatos).
+Para esta aplicación el tipo de inferencia es de tipo Online. Esto es a demanda de un usuario, el cual sube una imagen a la aplicación y esta devuelve como resultado el nombre del animal y probabilidad con la que asegura la predicción. El servicio de inferencia se ofrece a través del framework web Flask por su simplicidad y capacidad de integración con otras herramientas. A través de MLFlow se comparan los modelos registrados y se utiliza como modelo productivo el que posee el alias de *Champion*. 
 
 
 #### 5. CI/CD
-La integración continua
+La integración continua, despliegue y re entrenamiento del modelo se realiza con Github Actions. El disparador o *trigger* es al realizar un push al repo. Esto puede darse al actualizar las imagenes para mejorar y/o customizar el dataset y por ende las salidas del modelo. También al actualizar el modelo ya sea por una modificación del mismo o querer usar otro modelo. En esta situación la definición de modelo *champion* estará dada por la comparación de una métrica.
+
 
 
 #### 6. Infra de Servicio
