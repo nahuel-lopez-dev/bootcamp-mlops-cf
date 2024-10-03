@@ -1,5 +1,5 @@
-.*/mlruns/  
- /home/gaby/Documents/CF_MLOps/bootcamp-mlops-cf/mlruns/ 
+mlruns/  
+lib/
 dogs-vs-cats.zip
 kaggle.json
 sampleSubmission.csv
