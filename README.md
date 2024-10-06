@@ -62,8 +62,8 @@ Proyecto final para el bootcamp de MLOps de [Código Facilito](https://codigofac
 
 ## **Fuentes de datos**
 
-- df_ligas.csv
-- team_table.csv
+-
+-
 
 ## **Prerrequisitos**
 

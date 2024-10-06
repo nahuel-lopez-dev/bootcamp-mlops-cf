@@ -1,0 +1,29 @@
+serving.docker-compose.yml
+
+version: '3.8'
+
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "5002:5000"
+    environment:
+      - PREDICTION_SERVICE_URL=http://prediction_service:80
+    networks:
+      - frontend
+
+  prediction_service:
+    build: ./prediction_service
+    environment:
+      - MLFLOW_TRACKING_URI=http://tracking_server:5000
+    networks:
+      - frontend
+    ports:
+      - "5001:80"
+
+volumes:
+  # Aquí puedes añadir volúmenes si es necesario
+
+networks:
+  frontend:
+    driver: bridge

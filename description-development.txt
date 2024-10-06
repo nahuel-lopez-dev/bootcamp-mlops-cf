@@ -1,0 +1,47 @@
+Descripción del desarrollo del proyecto
+
+Desarrollo del Proyecto MLOps: 
+Clasificación de Imágenes de Perros y Gatos
+Resumen del Proyecto
+Este proyecto es una aplicación de clasificación de imágenes que permite a los usuarios subir imágenes de perros o gatos y obtener la predicción del tipo de animal. El sistema está diseñado utilizando un enfoque de MLOps, integrando herramientas como MLflow para el seguimiento de experimentos, MinIO como almacenamiento de artefactos y Docker para la contenedorización de los servicios.
+
+Arquitectura del Sistema
+La arquitectura del sistema está compuesta por los siguientes componentes:
+
+Modelo de Aprendizaje Automático:
+
+Se entrena un modelo de red neuronal utilizando TensorFlow-Keras para clasificar imágenes de perros y gatos.
+El modelo entrenado se guarda en un bucket de MinIO para facilitar el acceso y la reutilización.
+Servidor de MLflow:
+
+MLflow se utiliza para el seguimiento de experimentos y la gestión de modelos.
+El servidor de MLflow almacena los metadatos del modelo y los artefactos en un bucket de MinIO.
+Servicios Docker:
+
+Entrenamiento: Un servicio Docker dedicado al entrenamiento del modelo, que interactúa con la base de datos PostgreSQL y MLflow.
+Predicción: Un servicio Docker que expone una API REST para realizar inferencias utilizando el modelo entrenado.
+Frontend: Una aplicación web simple que permite a los usuarios subir imágenes y ver las predicciones.
+Desarrollo del Proyecto
+1. Configuración del Entorno
+Se establece un entorno de desarrollo utilizando Docker Compose, configurando servicios para la base de datos PostgreSQL, el servidor de MLflow y MinIO.
+Se definen las variables de entorno necesarias para la configuración de cada servicio en un archivo .env.
+2. Entrenamiento del Modelo
+Se prepara un script de entrenamiento que carga y preprocesa los datos de entrenamiento.
+El modelo se entrena utilizando TensorFlow-Keras y se guarda en un bucket de MinIO a través de MLflow.
+Se realizan pruebas de validación para asegurar que el modelo tiene un rendimiento aceptable.
+3. Despliegue del Servidor de Predicción
+Se desarrolla una API REST utilizando Flask para servir las predicciones del modelo entrenado.
+El servidor de predicción se configura para conectar con MLflow y cargar el modelo desde el almacenamiento de MinIO.
+Se implementa un endpoint que permite a los usuarios subir imágenes y recibir la predicción correspondiente.
+4. Desarrollo del Frontend
+Se crea una aplicación frontend que permite a los usuarios interactuar con el servicio de predicción.
+La aplicación se desarrolla utilizando tecnologías web estándar (HTML, CSS, JavaScript) y se comunica con la API de predicción.
+5. Integración y Pruebas
+Se realizan pruebas de integración para asegurar que todos los componentes funcionan juntos sin problemas.
+Se valida que el flujo de trabajo desde la carga de la imagen hasta la obtención de la predicción sea fluido.
+6. Implementación de CI/CD
+Se configura GitHub Actions para automatizar el proceso de integración continua y entrega continua (CI/CD).
+Cada vez que se realiza un cambio en el código, se ejecutan pruebas automáticas y se despliegan los cambios en el entorno de producción.
+
+Conclusiones
+Este proyecto proporciona un flujo de trabajo de MLOps completo, desde el entrenamiento del modelo hasta la implementación del servicio de predicción. Utilizando herramientas como MLflow y MinIO, se asegura la trazabilidad y el almacenamiento efectivo de los artefactos del modelo. Docker facilita la creación de un entorno reproducible y escalable.
